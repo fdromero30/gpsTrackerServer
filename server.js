@@ -7,7 +7,9 @@ var options = {
 };
 
 var server = gps.server(options, function (device, connection) {
+  console.log("before login");
   device.on("login_request", function (device_id, msg_parts) {
+    console.log(device_id, "intentando conectar");
     // Some devices sends a login request before transmitting their position
     // Do some stuff before authenticate the device...
 
