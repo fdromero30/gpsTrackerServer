@@ -18,7 +18,7 @@ var server = gps.server(options, function (device, connection) {
   //PING -> When the gps sends their position
   device.on("ping", function (data) {
     //After the ping is received, but before the data is saved
-    //console.log(data);
+    console.log(data, 'device on data ');
     return data;
   });
 
@@ -27,7 +27,7 @@ var server = gps.server(options, function (device, connection) {
     ******************************/
   device.on("alarm", function (alarm_code, alarm_data, msg_data) {
     console.log(
-      "Help! Something happend: " + alarm_code + " (" + alarm_data.msg + ")"
+      "Help! Something happend: " + alarm_code + " (" + alarm_data.msg + ")" + JSON.stringify(msg_data)
     );
     //call_me();
   });
