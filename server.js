@@ -2,7 +2,7 @@ var gps = require("gps-tracking");
 
 var options = {
   debug: true,
-  port:  8090,
+  port: process.env.PORT || 8090,
   device_adapter: "TK103",
 };
 
