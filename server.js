@@ -2,14 +2,12 @@ var gps = require("gps-tracking");
 
 var options = {
   debug: true,
-  port: process.env.PORT || 8090,
+  port:  8090,
   device_adapter: "TK103",
 };
 
 var server = gps.server(options, function (device, connection) {
-  console.log("before login");
   device.on("login_request", function (device_id, msg_parts) {
-    console.log(device_id, "intentando conectar");
     // Some devices sends a login request before transmitting their position
     // Do some stuff before authenticate the device...
 
